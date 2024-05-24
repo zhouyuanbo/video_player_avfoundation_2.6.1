@@ -117,6 +117,11 @@ class AVFoundationVideoPlayer extends VideoPlayerPlatform {
           return VideoEvent(
             eventType: VideoEventType.completed,
           );
+        case 'loopPlaybackEnd':
+          return VideoEvent(
+            eventType: VideoEventType.loopPlaybackEnd,
+            isLoopPlaybackEnd: map['isLoopPlaybackEnd'] as bool,
+          );
         case 'bufferingUpdate':
           final List<dynamic> values = map['values'] as List<dynamic>;
 
